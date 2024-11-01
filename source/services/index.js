@@ -8,8 +8,8 @@ const routeNames = ["accounts", "categories", "collections", "products"];
 
 function setupService(name) {
 	return itemNames.reduce(function (accumulator, itemName, index) {
-		accumulator[itemName] = async function (data = []) {
-			const response = await fetch(`${apiUrl}/${name}`, { method: itemMethods[index], headers, body: JSON.stringify(data) });
+		accumulator[itemName] = async function (data = [], conditions = {}) {
+			const response = await fetch(`${apiUrl}/${name}`, { method: itemMethods[index], headers, body: JSON.stringify({ data, conditions }) });
 			return await response.json();
 		};
 		return accumulator;

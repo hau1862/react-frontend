@@ -6,8 +6,8 @@
 	"main": "index.js",
 	"scripts": {
 		"format": "prettier . --write",
-		"lint": "eslint **/*.{js,jsx}",
-		"test": "webpack configtest && prettier . --check && eslint **/*.{js,jsx}",
+		"lint": "eslint **/*.{js,jsx,ts,tsx}",
+		"test": "webpack configtest && prettier . --check && eslint **/*.{js,jsx,ts,tsx}",
 		"development": "webpack --mode development",
 		"production": "webpack --mode production"
 	},
